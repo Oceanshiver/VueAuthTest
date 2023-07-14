@@ -1,4 +1,4 @@
-# vueauthtest
+# VueAuthTest
 
 ## Project setup
 ```
