@@ -12,15 +12,18 @@
 
 <script>
 
+const AUTH_SECRET_KEY = "12345";
+const AUTH_USER_UID = "cf88adc3-f749-4cf9-8914-b660f3b5b8e1";
+
 export default {
-  name: 'HelloWorld',
   props: {
     msg: String
   },
   methods: {
     getUserGroups: function () {
+      var authStr = btoa(AUTH_SECRET_KEY + "|" + AUTH_USER_UID);
       var myHeaders = new Headers();
-      myHeaders.append("VueAuth", "1");
+      myHeaders.append("HubCloudCustomAuth", authStr);
 
       var requestOptions = {
         method: 'GET',
